@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ProgressionManager : MonoBehaviour
 {
     [SerializeField] Button[] levels;
-
+    
 
     void Start()
     {

@@ -6,6 +6,7 @@ public class Level : MonoBehaviour
 {
     //parameters
     [SerializeField] int breakableBlocks; //Serialized for debugging
+    
 
     //cached reference
     SceneLoader sceneloader;

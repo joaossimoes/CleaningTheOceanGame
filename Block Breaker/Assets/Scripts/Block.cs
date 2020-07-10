@@ -12,9 +12,10 @@ public class Block : MonoBehaviour
     
     //cached reference
     Level level;
-
+    LevelStrip levelStrip;
     //State variables
     [SerializeField] int timesHit; //TODO only serialized for debug purposes
+    bool inLine = false;
 
     private void Start()
     {
@@ -36,9 +37,15 @@ public class Block : MonoBehaviour
         {
             HandleHit();
         }
-
+        
     }
 
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        inLine = true;
+        levelStrip = FindObjectOfType<LevelStrip>();
+        levelStrip.AddBlockToLine();
+    }
     private void HandleHit()
     {
         timesHit++;
@@ -68,6 +75,11 @@ public class Block : MonoBehaviour
 
     private void DestroyBlock()
     {
+        if (inLine)
+        {
+            levelStrip = FindObjectOfType<LevelStrip>();
+            levelStrip.SubtractBlockFromLine();
+        }
         PlayBlockDestroySFX();
         Destroy(gameObject);
         level.BlockDestroyed();
