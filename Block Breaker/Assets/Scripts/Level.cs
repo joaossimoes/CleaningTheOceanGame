@@ -10,6 +10,10 @@ public class Level : MonoBehaviour
     //cached reference
     SceneLoader sceneloader;
 
+    public string nextLevel = "Level02";
+    public int levelToUnlock = 2;
+
+
     private void Start()
     {
         sceneloader = FindObjectOfType<SceneLoader>();
@@ -26,7 +30,13 @@ public class Level : MonoBehaviour
         breakableBlocks--;
         if ( breakableBlocks <= 0)
         {
-            sceneloader.LoadNextScene();
+            WinLevel();
         }
+    }
+
+    public void WinLevel()
+    {
+        PlayerPrefs.SetInt("levelReached", levelToUnlock);
+        sceneloader.LoadStartScene();
     }
 }
