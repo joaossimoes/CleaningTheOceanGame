@@ -7,7 +7,7 @@ using TMPro;
 public class GameStatus : MonoBehaviour
 {
     //config params
-    [Range(0.1f,10f)] [SerializeField] float gameSpeed = 1f;
+    //[Range(0f,10f)] [SerializeField] float gameSpeed = 1f;
     [SerializeField] int pointsPerBlockDestroyed = 83;
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] bool isAutoPlayEnabled;    
@@ -40,7 +40,7 @@ public class GameStatus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Time.timeScale = gameSpeed;
+        //Time.timeScale = gameSpeed;
     }
 
     public void AddToScore()

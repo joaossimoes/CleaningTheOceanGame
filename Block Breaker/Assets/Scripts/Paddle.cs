@@ -11,6 +11,7 @@ public class Paddle : MonoBehaviour
     [SerializeField] float minX = 1f;
     [SerializeField] float maxX = 15f;
     [SerializeField] public float ScreenWidthInUnits;
+    [SerializeField] float boatSpeed;
 
     //cached references
     GameStatus gameStatus;
@@ -26,9 +27,12 @@ public class Paddle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var targetPos = new Vector2 (GetXPos(), transform.position.y);
-        getDirection(transform.position, targetPos);
-        transform.position = Vector2.MoveTowards(transform.position, targetPos, 3f);
+        if (!PauseSystem.isPaused)
+        {
+            var targetPos = new Vector2 (GetXPos(), transform.position.y);
+            getDirection(transform.position, targetPos);
+            transform.position = Vector2.MoveTowards(transform.position, targetPos, boatSpeed);
+        }
         
     }
 
