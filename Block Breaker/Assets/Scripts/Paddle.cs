@@ -12,6 +12,7 @@ public class Paddle : MonoBehaviour
     [SerializeField] float maxX = 15f;
     [SerializeField] public float ScreenWidthInUnits;
     [SerializeField] float boatSpeed;
+    [SerializeField] Canvas resartCanvas;
 
     //cached references
     GameStatus gameStatus;
@@ -22,6 +23,7 @@ public class Paddle : MonoBehaviour
     {
         gameStatus = FindObjectOfType<GameStatus>();
         ball = FindObjectOfType<Ball>();
+        //Canvas resartCanvas = gameObject.GetComponent(typeof(Canvas)) as Canvas;
     }
 
     // Update is called once per frame
@@ -43,6 +45,7 @@ public class Paddle : MonoBehaviour
         }
         else{
             transform.localScale = new Vector2 (Mathf.Sign(initialPos.x - targetPos.x) * 2.4f, 1.6f);
+            transform.GetChild(0).localScale = new Vector2 (Mathf.Sign(initialPos.x - targetPos.x) * 0.4216092f, 0.5991819f);
         }
         
     }
@@ -56,5 +59,15 @@ public class Paddle : MonoBehaviour
         {
             return Input.mousePosition.x / Screen.width * ScreenWidthInUnits;
         }
+    }
+
+    public void DisableCanvas()
+    {
+        resartCanvas.enabled = false;
+    }
+
+    public void EnableCanvas()
+    {
+        resartCanvas.enabled = true;
     }
 }

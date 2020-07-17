@@ -7,12 +7,14 @@ public class PauseSystem : MonoBehaviour
     [SerializeField] Canvas pauseCanvas;
     public static bool isPaused;
 
-
+    Paddle paddle;
 
     // Start is called before the first frame update
     void Start()
     {
+        paddle = FindObjectOfType<Paddle>();
         pauseCanvas.enabled = false;
+        paddle.DisableCanvas();
     }
 
     // Update is called once per frame
@@ -37,6 +39,12 @@ public class PauseSystem : MonoBehaviour
     {
         Time.timeScale = 1f;
         isPaused = false;
+        paddle.DisableCanvas();
+    }
+
+    public void ResumeButton()
+    {
         pauseCanvas.enabled = false;
+        paddle.EnableCanvas();
     }
 }

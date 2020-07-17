@@ -49,9 +49,9 @@ TagManager:
   - name: Sea
     uniqueID: 1089477747
     locked: 0
-  - name: UI
-    uniqueID: 3887815707
-    locked: 0
   - name: Blocks
     uniqueID: 1432313349
+    locked: 0
+  - name: UI
+    uniqueID: 3887815707
     locked: 0
