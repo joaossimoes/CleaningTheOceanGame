@@ -10,14 +10,16 @@ public class Level : MonoBehaviour
 
     //cached reference
     SceneLoader sceneloader;
+    ProgressionManager progressionManager;
 
-    public string nextLevel = "Level02";
-    public int levelToUnlock = 2;
+    [SerializeField] public string nextLevel;
+    [SerializeField] public int levelToUnlock;
 
 
     private void Start()
     {
         sceneloader = FindObjectOfType<SceneLoader>();
+        progressionManager = FindObjectOfType<ProgressionManager>();
     }
 
 
@@ -39,5 +41,6 @@ public class Level : MonoBehaviour
     {
         PlayerPrefs.SetInt("levelReached", levelToUnlock);
         sceneloader.LoadStartScene();
+        GameData.AddLevelPassed(levelToUnlock);
     }
 }

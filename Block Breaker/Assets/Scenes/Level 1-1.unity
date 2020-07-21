@@ -863,6 +863,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &241911896 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1857751733642630667, guid: d5b989f7d1db2a24695e269494fb7ad4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1857751733073572805}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02c11771aab8ec44a8ac6a51e8010917, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &326972451
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1150,7 +1162,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 814477635, guid: 822f594ec1ccca148b6a6c202079743f, type: 3}
       propertyPath: nextLevel
-      value: Level02
+      value: Level 1-2
       objectReference: {fileID: 0}
     - target: {fileID: 906172395348720302, guid: 822f594ec1ccca148b6a6c202079743f,
         type: 3}
@@ -6303,6 +6315,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 38797516, guid: 5d3a690096a6c144c835e996a47d8974, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 241911896}
+    - target: {fileID: 38797516, guid: 5d3a690096a6c144c835e996a47d8974, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UnpauseGame
+      objectReference: {fileID: 0}
     - target: {fileID: 1684533017735778280, guid: 5d3a690096a6c144c835e996a47d8974,
         type: 3}
       propertyPath: m_SortingOrder
