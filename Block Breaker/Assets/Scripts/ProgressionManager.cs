@@ -8,29 +8,17 @@ public class ProgressionManager : MonoBehaviour
 
     [SerializeField] Button[] levels;
 
-    
-    List<int> unlockedLevels;
-
-    /*void Awake()
-    {
-        ProgressionManager[] objs = FindObjectsOfType<ProgressionManager>();
-
-        if (objs.Length > 1)
-        {
-            Destroy(this.gameObject);
-        }    
-
-        DontDestroyOnLoad(this.gameObject);
-    }*/
-
+    public static int levelsPassed;
 
     void Start()
     {
+        
+        //levelsPassed += 1;
         foreach (Button level in levels)
         {
-            Debug.Log("index do level" + System.Array.IndexOf(levels,level));
-            Debug.Log("valor nos passados" + GameData.levelsPassed[0]);
-            if (System.Array.IndexOf(levels,level) > GameData.levelsPassed[0]-2)
+            level.interactable = true;
+            Debug.Log("quantidade de niveis passados" + levelsPassed);
+            if (System.Array.IndexOf(levels,level) > levelsPassed)
             {
                 level.interactable = false;
             }
@@ -38,25 +26,25 @@ public class ProgressionManager : MonoBehaviour
         
     }
 
-    //TODO Unlock the buttons that should be unlocked
-
-   
-
-    /*
-    
-    
-
-    void Start()
+    public static void AddLevelPassed()
     {
-        int levelReached = PlayerPrefs.GetInt("levelReached", 1);
-        for (int i = 0; i < levels.Length; i++)
-        {
-            if (i + 1 > levelReached)
-            {
-                levels[i].interactable = false; 
-            }
-            
-        }
+        levelsPassed+=1;
+    }
 
-    }  */
+    public void SaveGame()
+    {
+        SaveSystem.SaveGame(this);
+        Debug.Log("saving...");
+    }
+
+    public void LoadGame()
+    {
+        Debug.Log("loading..");
+        GameData data = SaveSystem.LoadGame();
+
+        levelsPassed = data.levelsPassed;
+        SaveSystem.LoadGame();
+        Start();
+    }
+
 }

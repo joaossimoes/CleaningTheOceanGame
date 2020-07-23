@@ -4,14 +4,14 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 public static class SaveSystem
 {
-    public static void SaveGame()
+    public static void SaveGame(ProgressionManager progressionManager)
     {
         BinaryFormatter formatter = new BinaryFormatter();
 
         string path = Application.persistentDataPath + "/player.sto";
         FileStream stream = new FileStream(path, FileMode.Create);
 
-        GameData data = new GameData();
+        GameData data = new GameData(progressionManager);
 
         formatter.Serialize(stream, data);
         stream.Close();
@@ -30,6 +30,7 @@ public static class SaveSystem
 
             stream.Close();
 
+            Debug.Log(data);
             return  data;
         }
         else

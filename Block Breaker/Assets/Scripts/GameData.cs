@@ -5,23 +5,11 @@ using UnityEngine;
 [System.Serializable]
 public class GameData
 {
-    public int[] levelsPassedArray;
-
-    public static List<int> levelsPassed = new List<int>(){
-        0,
-    };
+    public int levelsPassed;
 
 
-     public static void AddLevelPassed(int levelNumber)
+    public GameData(ProgressionManager progressionManager)
     {
-        Debug.Log("i was here");
-        levelsPassed[0] = levelNumber;
-
+        levelsPassed = ProgressionManager.levelsPassed;
     }
-
-    /*public GameData()
-    {
-        //TODO Get the game data that i want to save
-        levelsPassed = 
-    }*/
 }
