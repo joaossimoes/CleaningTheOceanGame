@@ -45,7 +45,7 @@ public class Paddle : MonoBehaviour
         }
         else{
             transform.localScale = new Vector2 (Mathf.Sign(initialPos.x - targetPos.x) * 2.4f, 1.6f);
-//            transform.GetChild(0).localScale = new Vector2 (Mathf.Sign(initialPos.x - targetPos.x) * 0.4216092f, 0.5991819f);
+            transform.GetChild(0).localScale = new Vector2 (Mathf.Sign(initialPos.x - targetPos.x) * 0.4f, 0.5f);
         }
         
     }

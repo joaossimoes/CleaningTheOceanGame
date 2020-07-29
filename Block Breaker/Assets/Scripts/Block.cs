@@ -89,7 +89,8 @@ public class Block : MonoBehaviour
     private void PlayBlockDestroySFX()
     {
         FindObjectOfType<GameStatus>().AddToScore();
-        AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position);
+        Debug.Log(PlayerPrefsController.GetVolume());
+        AudioSource.PlayClipAtPoint(breakSound, Camera.main.transform.position, 0.0f);
     }
 
     private void TriggerSparklesVFX()

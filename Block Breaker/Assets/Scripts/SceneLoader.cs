@@ -19,11 +19,29 @@ public class SceneLoader : MonoBehaviour
         Cursor.visible = true;
     }
 
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene(0);
+        Cursor.visible = true;
+    }
+
+    public void LoadSettingsScene()
+    {
+        SceneManager.LoadScene("Settings");
+        Cursor.visible = true;
+    }
+
+    public void LoadWorldMap()
+    {
+        SceneManager.LoadScene("World Map");
+        Cursor.visible = true;
+    }
+
     public void LoadLevel1()
     {
         SceneManager.LoadScene("Level 1-1");
     }
-
+    
     public void LoadLevel2()
     {
         SceneManager.LoadScene("Level 1-2");
@@ -32,6 +50,11 @@ public class SceneLoader : MonoBehaviour
     public void LoadLevel3()
     {
         SceneManager.LoadScene("Level 1-3");
+    }
+
+    public void LoadLevel4()
+    {
+        SceneManager.LoadScene("Level 1-4");
     }
 
     public void QuitGame()

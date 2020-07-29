@@ -39,7 +39,6 @@ public class ProgressionManager : MonoBehaviour
         foreach (Button level in levels)
         {
             level.interactable = true;
-            Debug.Log("quantidade de niveis passados" + levelsPassed);
             if (System.Array.IndexOf(levels, level) > levelsPassed)
             {
                 level.interactable = false;
