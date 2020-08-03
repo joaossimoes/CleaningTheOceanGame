@@ -37,24 +37,9 @@ public class SceneLoader : MonoBehaviour
         Cursor.visible = true;
     }
 
-    public void LoadLevel1()
+    public void LoadLevel(int level)
     {
-        SceneManager.LoadScene("Level 1-1");
-    }
-    
-    public void LoadLevel2()
-    {
-        SceneManager.LoadScene("Level 1-2");
-    }
-
-    public void LoadLevel3()
-    {
-        SceneManager.LoadScene("Level 1-3");
-    }
-
-    public void LoadLevel4()
-    {
-        SceneManager.LoadScene("Level 1-4");
+        SceneManager.LoadScene("Level 1-" + level);
     }
 
     public void QuitGame()

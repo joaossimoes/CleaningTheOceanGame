@@ -41,7 +41,7 @@ public class Level : MonoBehaviour
     public void WinLevel()
     {
         PlayerPrefs.SetInt("levelReached", levelToUnlock);
-        sceneloader.LoadStartScene();
+        sceneloader.LoadWorldMap();
         ProgressionManager.AddLevelPassed();
         //SaveSystem.SaveGame();
     }

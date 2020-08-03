@@ -15,9 +15,11 @@ public class ProgressionManager : MonoBehaviour
 
     void Start()
     {
-        ButtonsUnlock();
-        ImagesUnlock();
-
+        if (levels.Length > 0)
+        {
+            ButtonsUnlock();
+            ImagesUnlock();
+        }
     }
 
 

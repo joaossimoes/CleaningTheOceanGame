@@ -15,6 +15,7 @@ public class PauseSystem : MonoBehaviour
         paddle = FindObjectOfType<Paddle>();
         pauseCanvas.enabled = false;
         paddle.DisableCanvas();
+        UnpauseGame();
     }
 
     // Update is called once per frame
@@ -32,6 +33,7 @@ public class PauseSystem : MonoBehaviour
         Time.timeScale = 0f;
         isPaused = true;
         pauseCanvas.enabled = true;
+        Cursor.visible = true;
     }
 
 
@@ -40,11 +42,13 @@ public class PauseSystem : MonoBehaviour
         Time.timeScale = 1f;
         isPaused = false;
         paddle.DisableCanvas();
+        Cursor.visible = false;
     }
 
     public void ResumeButton()
     {
         pauseCanvas.enabled = false;
         paddle.EnableCanvas();
+        Cursor.visible = true;
     }
 }

@@ -8126,7 +8126,7 @@ PrefabInstance:
     - target: {fileID: 1903728033832162629, guid: f5f63fc38f7f0bf40b0aa7cdb004c787,
         type: 3}
       propertyPath: yPush
-      value: 11
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1903728033832162630, guid: f5f63fc38f7f0bf40b0aa7cdb004c787,
         type: 3}
